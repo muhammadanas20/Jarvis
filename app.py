@@ -1,8 +1,6 @@
 import streamlit as st
 from datetime import datetime
 import webbrowser
-import wikipedia
-import pytz
 from typing import Optional
 
 # Initialize session state
