@@ -31,6 +31,12 @@ def takeCommand():
         r.pause_threshold = 1
         r.adjust_for_ambient_noise(source, duration=0.8)
         try:
+             import speech_recognition as sr
+             AUDIO_ENABLED = True
+        except ImportError:
+           AUDIO_ENABLED = False
+        st.warning("Audio features disabled - missing dependencies")
+        try:
             audio = r.listen(source, timeout=8, phrase_time_limit=8)
             st.info("Recognizing...")
             try:
